@@ -32,7 +32,7 @@ class Main extends PluginBase implements Listener {
                 if($sender->hasPermission("disguise.command")) {
                     $input = array("Apple", "Orange", "Banana", "Pear");
                     $rand_keys = array_rand($input, 1);
-                        echo $input[$rand_keys[1]] . "\n";
+//                      $input[$rand_keys[1]];
 // Change line above to get the random word & set player name later.
                 return true;
                 }else{
