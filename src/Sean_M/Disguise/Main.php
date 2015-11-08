@@ -6,6 +6,8 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat;
 use pocketmine\Player;
+use pocketmine\command\Command;
+use pocketmine\command\CommandSender;
 
 class Main extends PluginBase implements Listener {
 
