@@ -9,4 +9,4 @@ commands:
     disguise:
         description: "Disguise yourself as a random name."
         usage: "/disguise"
-        permission: disguise.disguise
+        permission: disguise.command
