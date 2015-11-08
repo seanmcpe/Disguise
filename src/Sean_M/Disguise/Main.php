@@ -30,10 +30,9 @@ class Main extends PluginBase implements Listener {
         if(strtolower($cmd->getName()) === "disguise") {
             if($sender instanceof Player) {
                 if($sender->hasPermission("disguise.command")) {
-                    $input = array("Apple", "Orange", "Banana", "Pear");
-                    $rand_keys = array_rand($input, 1);
-//                      $input[$rand_keys[1]];
-// Change line above to get the random word & set player name later.
+                    $list = array("Apple", "Orange", "Banana", "Pear");
+                    $nick = array_rand($input, 1);
+                        $sender->setNameTag($nick);
                 return true;
                 }else{
                     $sender->sendMessage(TextFormat::RED . "You don't have permissions to use this command.");
