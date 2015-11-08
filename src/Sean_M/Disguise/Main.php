@@ -27,7 +27,7 @@ class Main extends PluginBase implements Listener {
     }
 
     public function onCommand(CommandSender $sender, Command $cmd, $label,array $args){
-        if(strtolower($cmd->getName()) === "disguise") {
+        if(strtolower($cmd->getName()) == "disguise") {
             if($sender instanceof Player) {
                 if($sender->hasPermission("disguise.command")) {
                     $list = array("Apple", "Orange", "Banana", "Pear");
@@ -36,6 +36,7 @@ class Main extends PluginBase implements Listener {
                 return true;
                 }else{
                     $sender->sendMessage(TextFormat::RED . "You don't have permissions to use this command.");
+                }
             }
         }
     }
