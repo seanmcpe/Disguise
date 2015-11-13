@@ -11,16 +11,12 @@ use pocketmine\command\CommandSender;
 
 class Main extends PluginBase implements Listener {
 
-  public $config;
-
     public function onLoad() {
         $this->getLogger()->info(TextFormat::GREEN . "Loading Disguise by Sean_M...");
     }
 
     public function onEnable() {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->saveDefaultConfig();
-        $this->config = $this->getConfig()->getAll();
         $this->getLogger()->info(TextFormat::GREEN . "Disguise by Sean_M enabled!");
     }
 
@@ -32,7 +28,7 @@ class Main extends PluginBase implements Listener {
         if(strtolower($cmd->getName()) == "disguise") {
             if($sender instanceof Player) {
                 if($sender->hasPermission("disguise.command")) {
-                    $list = array("Apple", "Orange", "Banana", "Pear");
+                    $list = array("Blue", "Red", "Green", "Orange");
                     $nick = array_rand($list, 1);
                         $sender->setNameTag($nick);
                 return true;
