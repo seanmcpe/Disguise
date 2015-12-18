@@ -29,7 +29,8 @@ class Main extends PluginBase implements Listener {
             if($sender instanceof Player) {
                 if($sender->hasPermission("disguise.command")) {
                     $list = array("Blue", "Red", "Green", "Orange");
-                    $nick = array_rand($list, 1);
+                    $nick = array_rand($list);
+                        $sender->setDisplayName($list[$nick]);
                         $sender->setNameTag($nick);
                 return true;
                 }else{
