@@ -27,15 +27,15 @@ class Main extends PluginBase implements Listener {
         if(strtolower($cmd->getName()) == "disguise") {
             if($sender instanceof Player) {
                 if($sender->hasPermission("disguise.command")) {
-                    $list = array("Blue", "Red", "Green", "Orange");
+                    $list = array($this->config["names"]);
                     $nick = array_rand($list);
                         $sender->setDisplayName($list[$nick]);
                         $sender->setNameTag($list[$nick]);
                 return true;
-                } else {
-                    $sender->sendMessage(TextFormat::RED . "You don't have permissions to use this command.");
-                } else {
-                    $sender->sendMessage(TextFormat::RED . "You must use this command in-game!");
+                   } else {
+                       $sender->sendMessage(TextFormat::RED . "You don't have permissions to use this command.");
+                   } else {
+                       $sender->sendMessage(TextFormat::RED . "You must use this command in-game!");
                 }
             }
         }
