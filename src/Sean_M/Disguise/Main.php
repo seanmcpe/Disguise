@@ -34,10 +34,8 @@ class Main extends PluginBase implements Listener {
                 return true;
                 } else {
                     $sender->sendMessage(TextFormat::RED . "You don't have permissions to use this command.");
-                }
-             } else {
+                } else {
                     $sender->sendMessage(TextFormat::RED . "You must use this command in-game!");
-             }
                 }
             }
         }
