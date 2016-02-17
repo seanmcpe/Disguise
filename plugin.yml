@@ -1,6 +1,6 @@
 name: Disguise
 author: Sean_M
-version: "1.0.0"
+version: 1.0.0
 api: [1.0.0]
 description: Disguise yourself as a random name.
 main: Sean_M\Disguise\Main
