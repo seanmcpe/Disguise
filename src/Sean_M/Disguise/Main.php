@@ -11,13 +11,12 @@ use pocketmine\command\CommandSender;
 
 class Main extends PluginBase implements Listener {
 
-    public function onLoad() {
-        $this->getLogger()->info(TextFormat::GREEN . "Loading Disguise by Sean_M...");
-    }
-
     public function onEnable() {
-        $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getLogger()->info(TextFormat::GREEN . "Disguise by Sean_M enabled!");
+       @mkdir($this->getDataFolder());
+       $this->getServer()->getPluginManager()->registerEvents($this, $this);
+       $this->config = $this->getConfig()->getAll();
+       $this->getLogger()->info(TextFormat::GREEN . "Disguise by Sean_M enabled!");
+          $this->saveDefaultConfig();
     }
 
     public function onDisable() {
@@ -31,10 +30,14 @@ class Main extends PluginBase implements Listener {
                     $list = array("Blue", "Red", "Green", "Orange");
                     $nick = array_rand($list);
                         $sender->setDisplayName($list[$nick]);
-                        $sender->setNameTag($nick);
+                        $sender->setNameTag($list[$nick]);
                 return true;
-                }else{
+                } else {
                     $sender->sendMessage(TextFormat::RED . "You don't have permissions to use this command.");
+                }
+             } else {
+                    $sender->sendMessage(TextFormat::RED . "You must use this command in-game!");
+             }
                 }
             }
         }
